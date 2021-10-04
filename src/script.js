@@ -52,7 +52,7 @@ const proteins = document.querySelector("#proteins");
 const totalCalories = document.querySelector("#total-calories");
 const foodLog = document.querySelector("#food-log");
 
-const myEndpoint = "remufood"; // you can change this endpoint if you want to start fresh
+const myEndpoint = "remusfoodlog"; // you can change this endpoint if you want to start fresh
 const API = new FetchWrapper(
 	"https://firestore.googleapis.com/v1/projects/programmingjs-90a13/databases/(default)/documents/"
 );
@@ -73,7 +73,7 @@ const API = new FetchWrapper(
 		API.get(myEndpoint)
 			.then((data) => {
 				// sort data coming from the API by timestamp
-				// latest added food item displayed first
+				// first item in the food log is the latest added food item (descending order by timestamp)
 				const sortedData = data.documents.sort(
 					(a, b) => new Date(b.createTime) - new Date(a.createTime)
 				);
@@ -84,6 +84,8 @@ const API = new FetchWrapper(
 					const carbsValue = item.fields.carbs.integerValue;
 					const fatsValue = item.fields.fats.integerValue;
 					const proteinsValue = item.fields.proteins.integerValue;
+
+					// render each food item card to food log container
 					foodLog.insertAdjacentHTML(
 						"beforeend",
 						`
@@ -110,7 +112,7 @@ const API = new FetchWrapper(
 					// Store all logged calories to a variable that is displayed in the log section
 					totalLoggedCalories += calculateCalories(item);
 
-					// turn food nutrient values from stringvalues to numbers and add them to total variables below, that are used aas the data for the chart
+					// turn food nutrient values from stringvalues to numbers and add them to total variables below, that are used as the data for the chart
 					totalCarbs += +carbsValue;
 					totalFats += +fatsValue;
 					totalProteins += +proteinsValue;
@@ -169,22 +171,36 @@ function renderChart(carbs, fats, proteins) {
 	var myChart = new Chart(ctx, {
 		type: "doughnut",
 		data: {
-			labels: ["Carbs", "Fats", "Proteins"],
+			labels: ["Carbs (g)", "Fats (g)", "Proteins (g)"],
 			datasets: [
 				{
-					label: "Carbs, Fats and Proteins",
 					data: [carbs, fats, proteins],
 					backgroundColor: [
-						"rgb(62, 219, 0)",
-						"rgb(255, 222, 36)",
-						"rgb(255, 87, 36)",
+						"rgba(62, 219, 0, 1)",
+						"rgba(255, 222, 36, 1)",
+						"rgba(255, 87, 36, 1)",
+					],
+					hoverBackgroundColor: [
+						"rgba(62, 219, 0, 0.7)",
+						"rgba(255, 222, 36, 0.7)",
+						"rgba(255, 87, 36, 0.7)",
 					],
 					borderColor: "#222",
-					borderWidth: 1,
+					borderWidth: 2,
 					spacing: 5,
 				},
 			],
 		},
-		options: {},
+		options: {
+			plugins: {
+				legend: {
+					position: "right",
+				},
+				title: {
+					display: true,
+					text: "Nutritional distribution of all items in food log",
+				},
+			},
+		},
 	});
 }
