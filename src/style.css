@@ -1,0 +1,162 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(255, 238, 217);
+	margin: 2rem;
+	text-align: center;
+}
+
+h1,
+h2 {
+	margin: 2rem 0;
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#add-item-section {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	border: 2px solid #222;
+	border-radius: 1rem;
+	padding: 1rem;
+	background-color: #fff;
+}
+
+.labels {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.labels label {
+	margin: 1rem 0;
+	font-weight: bold;
+}
+
+.inputs {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.inputs select,
+input {
+	margin: 1rem 0;
+}
+
+form button {
+	margin: 1rem 0;
+	background-color: coral;
+	padding: 0.5rem;
+	font-size: 1rem;
+	color: #fff;
+	border: 2px solid #222;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+form button:hover {
+	background-color: rgb(255, 90, 30);
+}
+
+#chart-section {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.chart-container {
+	width: 300px;
+}
+
+#log-section {
+	margin: 1rem 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#total {
+	height: 100%;
+	padding: 1rem;
+	font-size: 2rem;
+	display: flex;
+	background-color: #fff;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid #222;
+	border-radius: 0.5rem;
+}
+
+#total-calories {
+	margin: 0.5rem;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+#food-log {
+	margin: 2rem 0;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.food-item {
+	height: auto;
+	width: 150px;
+	padding: 0.5rem;
+	margin: 1rem;
+	background-color: #fff;
+	border: 2px solid #222;
+	border-radius: 0.5rem;
+}
+
+.food-stats {
+	list-style: none;
+}
+
+.food-stats li {
+	margin: 1rem;
+}
+
+.food-stats li:nth-child(1) {
+	background-color: rgb(62, 219, 0);
+}
+.food-stats li:nth-child(2) {
+	background-color: rgb(255, 222, 36);
+}
+.food-stats li:nth-child(3) {
+	background-color: rgb(255, 87, 36);
+}
+.food-stats li:nth-child(4) {
+	font-size: large;
+}
+.food-stats li:nth-child(4) span {
+	font-weight: bold;
+	font-size: 1.5rem;
+}

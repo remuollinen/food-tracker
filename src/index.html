@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Food Tracker</title>
+	</head>
+	<body>
+		<header>
+			<h1>Food Tracker</h1>
+		</header>
+		<main>
+			<section id="add-item-section">
+				<h2>Add a food item</h2>
+				<form>
+					<div class="labels">
+						<label for="dropdown">Select food item</label>
+						<label for="carbs">Carbs</label>
+						<label for="fats">Fats</label>
+						<label for="proteins">Proteins</label>
+					</div>
+					<div class="inputs">
+						<select name="dropdown" id="dropdown">
+							<option value=""></option>
+							<option value="pizza">Pizza</option>
+							<option value="salad">Salad</option>
+							<option value="burger">Burger</option>
+							<option value="soup">Soup</option>
+						</select>
+						<input type="text" name="carbs" id="carbs" placeholder="0g" />
+						<input type="text" name="fats" id="fats" placeholder="0g" />
+						<input type="text" name="proteins" id="proteins" placeholder="0g" />
+					</div>
+					<button type="submit">Add</button>
+				</form>
+			</section>
+			<section id="chart-section">
+				<h2>Chart</h2>
+				<div class="chart-container">
+					<canvas id="myChart"></canvas>
+				</div>
+			</section>
+			<section id="log-section">
+				<h2>Log</h2>
+				<div id="total">
+					Total calories logged: <span id="total-calories"></span>
+				</div>
+				<div id="food-log"></div>
+			</section>
+		</main>
+	</body>
+	<script src="./script.js" type="module"></script>
+</html>
