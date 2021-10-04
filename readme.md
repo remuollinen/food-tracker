@@ -6,10 +6,11 @@
   - Carbs
   - Fats
   - Proteins
-- Get all added food items and display them in the food log
-  - Includes each food items nutritional values, total calories and data and time added
+- Get all added food items from API and display them in the food log
+  - Includes each food item with its nutritional values, total calories and timestamp
 - Notification when food item is added with **Snackbar**
-- Chart that displays distribution of nutritional values among all added food items, with **Chart.js**
+- Chart that displays distribution of nutritional values for all added food items, with **Chart.js**
+  - Total amounts of carbs, fats and proteins in grams for all added food items
 - FetchWrapper class was provided by the teacher
 
 ## Instructions
