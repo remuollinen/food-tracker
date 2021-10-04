@@ -72,8 +72,12 @@ const API = new FetchWrapper(
 	function init() {
 		API.get(myEndpoint)
 			.then((data) => {
-				// console.log(data.documents);
-				data.documents.map((item) => {
+				// sort data coming from the API by timestamp
+				// latest added food item displayed first
+				const sortedData = data.documents.sort(
+					(a, b) => new Date(b.createTime) - new Date(a.createTime)
+				);
+				sortedData.map((item) => {
 					// create food item card to log section
 					const timeCreated = new Date(item.updateTime);
 					const foodValue = item.fields.food.stringValue;
@@ -81,7 +85,7 @@ const API = new FetchWrapper(
 					const fatsValue = item.fields.fats.integerValue;
 					const proteinsValue = item.fields.proteins.integerValue;
 					foodLog.insertAdjacentHTML(
-						"afterbegin",
+						"beforeend",
 						`
 					<div class="food-item">
 						<h3>${foodValue.slice(0, 1).toUpperCase() + foodValue.slice(1)}</h3>
