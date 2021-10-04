@@ -1,5 +1,19 @@
 # Final project
 
+## Features
+
+- Add food items with their nutritional values in grams
+  - Carbs
+  - Fats
+  - Proteins
+- Get all added food items and display them in the food log
+  - Includes each food items nutritional values, total calories and data and time added
+- Notification when food item is added with **Snackbar**
+- Chart that displays distribution of nutritional values among all added food items, with **Chart.js**
+- FetchWrapper class was provided by the teacher
+
+## Instructions
+
 Build a multi-step “food tracker app” from scratch using JavaScript.
 
 Throughout this multi-step project, we're going to build a Food tracker app from scratch. Both Ilkka and my topics will be part of this project. You'll not be provided with any html, css or js files, however, you will be provided an API endpoint/documentation. Also, I can provide you with FetchWrapper which you have been using for your mini-projects.
@@ -28,7 +42,7 @@ Another goal of the final project is to help you apply the knowledge that you ac
 
 - Async await
 
-## Food API
+### Food API
 
 We'll be using Food API as a backend which is hosted on my Firebase account. So you do not have to create any new Firebase account. Since anyone can read/add food entries to this APi, I have made it possible for you to have your own space where you can add/read food entries. For that you may replace {namespace} with any random string. Base URL is: https://firestore.googleapis.com/v1/projects/programmingjs-90a13/databases/(default)/documents/{namespace}
 
@@ -40,7 +54,7 @@ If you see some data, you need to choose another {namespace}. For example, you c
 
 At any point in the final project, you can change the namespace if you'd like to have a fresh start. Please note that the API is public meaning anyone can read/add food entries.
 
-## Fetch Wrapper
+### Fetch Wrapper
 
 As usual, I will provide you with the FetchWrapper class that you have also used in your mini-projects. While you are not required to use it, I recommend that you do as it simplifies your code. There is a file called “fetch-wrapper.js” attached, feel free to use it.
 

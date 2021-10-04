@@ -86,9 +86,9 @@ const API = new FetchWrapper(
 					<div class="food-item">
 						<h3>${foodValue.slice(0, 1).toUpperCase() + foodValue.slice(1)}</h3>
 						<ul class="food-stats">
-							<li>Carbs: <span>${carbsValue}</span></li>
-							<li>Fats: <span>${fatsValue}</span></li>
-							<li>Proteins: <span>${proteinsValue}</span></li>
+							<li>Carbs: <span>${carbsValue + "g"}</span></li>
+							<li>Fats: <span>${fatsValue + "g"}</span></li>
+							<li>Proteins: <span>${proteinsValue + "g"}</span></li>
 							<li>Calories: <span>${calculateCalories(item)}</span></li>
 						</ul>
 						<p><i>${timeCreated.getDate()}.${
@@ -121,7 +121,7 @@ const API = new FetchWrapper(
 })();
 
 // **********************
-// POST food items to API
+// POST food items to API with notification
 // **********************
 
 form.addEventListener("submit", (e) => {
