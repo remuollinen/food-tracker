@@ -52,7 +52,7 @@ const proteins = document.querySelector("#proteins");
 const totalCalories = document.querySelector("#total-calories");
 const foodLog = document.querySelector("#food-log");
 
-const myEndpoint = "remufood";
+const myEndpoint = "remufood"; // you can change this endpoint if you want to start fresh
 const API = new FetchWrapper(
 	"https://firestore.googleapis.com/v1/projects/programmingjs-90a13/databases/(default)/documents/"
 );
@@ -141,7 +141,6 @@ form.addEventListener("submit", (e) => {
 
 	// Notification when food item is added
 	snackbar.show("New food item added successfully!");
-	init();
 });
 
 // ******************
