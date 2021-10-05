@@ -131,10 +131,15 @@ const API = new FetchWrapper(
 // **********************
 
 form.addEventListener("submit", (e) => {
+	// so the page doesn't refresh every time the form is submitted
 	e.preventDefault();
+
+	// post method requires your endpoint and the body (in this case the fields object)
+	// the firebase API wants the values formatted like below (with e.g. 'stringValue')
+
 	API.post(myEndpoint, {
 		fields: {
-			food: { stringValue: dropdown.value },
+			food: { stringValue: dropdown.value }, // select element
 			carbs: { integerValue: carbs.value },
 			fats: { integerValue: fats.value },
 			proteins: { integerValue: proteins.value },
