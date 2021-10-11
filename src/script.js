@@ -155,8 +155,7 @@ form.addEventListener("submit", (e) => {
 // ******************
 
 function calculateCalories(data) {
-	// Formula:
-	// carbs and protein are 4 cals per 1g, fats are 9 cals per 1g
+	// Calculation formula: carbs and protein are 4 cals per 1g, fats are 9 cals per 1g
 
 	let cals = 0;
 	const carbs = data.fields.carbs.integerValue * 4;
@@ -172,8 +171,8 @@ function calculateCalories(data) {
 // *****
 
 function renderChart(carbs, fats, proteins) {
-	var ctx = document.getElementById("myChart").getContext("2d");
-	var myChart = new Chart(ctx, {
+	let ctx = document.getElementById("myChart").getContext("2d");
+	new Chart(ctx, {
 		type: "doughnut",
 		data: {
 			labels: ["Carbs (g)", "Fats (g)", "Proteins (g)"],
